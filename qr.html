@@ -4,45 +4,107 @@
   <meta charset="UTF-8">
   <title>QR Code E-Vote OSIS</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      margin: 0;
       padding: 30px;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .qris-card {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      border: 1.5px solid #dcdcdc;
+      text-align: center;
     }
-    h2 {
-      margin-bottom: 20px;
+
+    .qris-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
     }
-    img {
-      margin-top: 20px;
-      width: 250px;
+
+    .qris-header img {
+      width: 120px;
+      height: auto;
     }
-    .link {
-      margin-top: 20px;
+
+    .qris-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .qris-qr {
+      border: 1px solid #ccc;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    .qris-qr img {
+      width: 220px;
+      height: 220px;
+    }
+
+    .qris-info {
       font-size: 14px;
-      color: blue;
+      color: #444;
+      margin-top: 20px;
       word-break: break-all;
+    }
+
+    .qris-info a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    .qris-info a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 420px) {
+      .qris-card {
+        padding: 18px;
+      }
+
+      .qris-qr img {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>Scan QR Code Untuk Memilih Ketua OSIS</h2>
-    <p>Buka kamera HP atau aplikasi scanner QR</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://lefarcao07.github.io/TLJ/e-vote.html" alt="QR Code Form OSIS">
-    <div class="link">
-      atau klik: <br>
-      <a href="https://lefarcao07.github.io/TLJ/e-vote.html" target="_blank">      https://docs.google.com/forms/d/e/1FAIpQLS
-      </a>
+
+  <div class="qris-card">
+    <div class="qris-header">
+      <img src="https://w7.pngwing.com/pngs/884/307/png-transparent-osis-logo-organisasi-siswa-intra-sekolah-logo-sma-negeri-1-pinrang-organization-vocational-school-sd-card-miscellaneous-high-school-senior-high-school-1-palembang.png" alt="Logo OSIS">
+    </div>
+    <div class="qris-title">Scan untuk E-Vote Ketua OSIS</div>
+    <div class="qris-qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://lefarcao07.github.io/TLJ/e-vote.html" alt="QR Code OSIS">
+    </div>
+    <div class="qris-info">
+      atau buka link: <br>
+      <a href="https://lefarcao07.github.io/TLJ/e-vote.html" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSeu</a>
     </div>
   </div>
+
 </body>
 </html>
