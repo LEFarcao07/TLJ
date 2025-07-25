@@ -1,187 +1,176 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pendaftaran OSIS</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      height: 100%;
-      background-color: #090a0f;
-      overflow-x: hidden;
-    }
-
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 5s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
-
-    .form-box {
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,245,245,0.95));
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 500px;
-      margin: 80px auto;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      animation: slideFade 0.8s ease-in-out;
-    }
-
-    @keyframes slideFade {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      text-align: center;
-      color: #222;
-      margin-bottom: 25px;
-      font-size: 1.6em;
-    }
-
-    label {
-      margin-top: 16px;
-      display: block;
-      font-weight: 600;
-      color: #333;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 10px 14px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      transition: border 0.3s, box-shadow 0.3s;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: #28a745;
-      box-shadow: 0 0 6px rgba(40,167,69,0.3);
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    button {
-      margin-top: 25px;
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(135deg, #28a745, #218838);
-      color: white;
-      border: none;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    button:hover {
-      background: linear-gradient(135deg, #218838, #1e7e34);
-      transform: scale(1.02);
-    }
-
-    /* Responsif */
-    @media (max-width: 600px) {
-      .form-box {
-        margin: 40px 20px;
-        padding: 20px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pendaftaran OSIS</title>
+    <style>
+      * {
+        box-sizing: border-box;
       }
-    }
-  </style>
-</head>
-<body>
-  <!-- Background Bintang -->
-  <div class="background" id="background"></div>
 
-  <!-- Formulir Interaktif -->
-  <div class="form-box">
-    <h2>✨ Pendaftaran Calon Anggota OSIS</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeuXd9upXVeu4e5KTkUTh1Meq8SeNjxmmuQFrH5XVQV3qP37w/formResponse" method="POST" target="_blank">
-      <label>👤 Nama Lengkap</label>
-      <input name="entry.404977100" type="text" placeholder="Masukkan nama lengkap..." required>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+        height: 100%;
+        overflow-x: hidden;
+        background: linear-gradient(-45deg, #00c9ff, #92fe9d, #fbc2eb, #a6c1ee);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
 
-      <label>🏫 Kelas</label>
-      <select name="entry.1882931725" required>
-        <option value="">Pilih Kelas</option>
-        <option value="X">X</option>
-        <option value="XI">XI</option>
-        <option value="XII">XII</option>
-      </select>
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-      <label>⚧️ Jenis Kelamin</label>
-      <select name="entry.1691926913" required>
-        <option value="">Pilih Jenis Kelamin</option>
-        <option value="Laki-Laki">Laki-Laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
+      .form-box {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(245, 245, 245, 0.95)
+        );
+        padding: 30px;
+        border-radius: 16px;
+        max-width: 500px;
+        margin: 80px auto;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        animation: slideFade 0.8s ease-in-out;
+      }
 
-      <label>📝 Alasan Ingin Masuk OSIS</label>
-      <textarea name="entry.1818906116" rows="4" placeholder="Tulis alasan kamu dengan jujur..." required></textarea>
+      @keyframes slideFade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-      <label>📱 Nomor WhatsApp</label>
-      <input name="entry.571568734" type="tel" placeholder="08xxxxxxxxxx" required>
+      h2 {
+        text-align: center;
+        color: #222;
+        margin-bottom: 25px;
+        font-size: 1.6em;
+      }
 
-      <button type="submit">🚀 Kirim Pendaftaran</button>
-    </form>
-  </div>
+      label {
+        margin-top: 16px;
+        display: block;
+        font-weight: 600;
+        color: #333;
+      }
 
-  <!-- Bintang dan Efek Kursor -->
-  <script>
-    const background = document.getElementById('background');
-    const numStars = 120;
-    const stars = [];
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 14px;
+        margin-top: 6px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: border 0.3s, box-shadow 0.3s;
+      }
 
-    for (let i = 0; i < numStars; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.animationDuration = `${2 + Math.random() * 3}s`;
-      background.appendChild(star);
-      stars.push(star);
-    }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 6px rgba(40, 167, 69, 0.3);
+        outline: none;
+      }
 
-    // Efek paralaks mouse (dibatasi supaya smooth)
-    document.addEventListener('mousemove', e => {
-      const { innerWidth, innerHeight } = window;
-      const moveX = (e.clientX - innerWidth / 2) / innerWidth;
-      const moveY = (e.clientY - innerHeight / 2) / innerHeight;
+      textarea {
+        resize: vertical;
+      }
 
-      stars.forEach((star, index) => {
-        const speed = (index + 1) / 1000;
-        star.style.transform = `translate(${moveX * speed * 100}px, ${moveY * speed * 100}px)`;
-      });
-    });
-  </script>
-</body>
+      button {
+        margin-top: 25px;
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #28a745, #218838);
+        color: white;
+        border: none;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #218838, #1e7e34);
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 600px) {
+        .form-box {
+          margin: 40px 20px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-box">
+      <h2>Pendaftaran Calon Anggota OSIS</h2>
+      <form
+        action="https://docs.google.com/forms/d/e/1FAIpQLSeuXd9upXVeu4e5KTkUTh1Meq8SeNjxmmuQFrH5XVQV3qP37w/formResponse"
+        method="POST"
+        target="_blank"
+      >
+        <label>Nama Lengkap</label>
+        <input
+          name="entry.404977100"
+          type="text"
+          placeholder="Masukkan nama lengkap..."
+          required
+        />
+
+        <label>Kelas</label>
+        <select name="entry.1882931725" required>
+          <option value="">Pilih Kelas</option>
+          <option value="X">X</option>
+          <option value="XI">XI</option>
+          <option value="XII">XII</option>
+        </select>
+
+        <label>Jenis Kelamin</label>
+        <select name="entry.1691926913" required>
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="Laki-Laki">Laki-Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label>Alasan Ingin Masuk OSIS</label>
+        <textarea
+          name="entry.1818906116"
+          rows="4"
+          placeholder="Tulis alasan kamu dengan jujur..."
+          required
+        ></textarea>
+
+        <label>Nomor WhatsApp</label>
+        <input
+          name="entry.571568734"
+          type="tel"
+          placeholder="08xxxxxxxxxx"
+          required
+        />
+
+        <button type="submit">Kirim Pendaftaran</button>
+      </form>
+    </div>
+  </body>
 </html>
