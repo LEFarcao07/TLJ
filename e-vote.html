@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Vote Ketua OSIS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .candidate {
+      margin: 15px 0;
+      text-align: left;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Pemilihan Ketua OSIS</h1>
+    
+    <form id="voteForm">
+      <div class="candidate">
+        <input type="radio" name="candidate" value="Ali" id="c1">
+        <label for="c1">Ali - XII IPA 1</label>
+      </div>
+      <div class="candidate">
+        <input type="radio" name="candidate" value="Budi" id="c2">
+        <label for="c2">Budi - XII IPS 2</label>
+      </div>
+      <div class="candidate">
+        <input type="radio" name="candidate" value="Citra" id="c3">
+        <label for="c3">Citra - XI TKJ 1</label>
+      </div>  
+      <button type="submit">Kirim Suara</button>
+    </form>
+    <div class="result" id="resultText"></div>
+  </div>
+  <script>
+    const form = document.getElementById('voteForm');
+    const resultText = document.getElementById('resultText');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pilihan = document.querySelector('input[name="candidate"]:checked');
+      if (!pilihan) {
+        resultText.textContent = 'Silakan pilih salah satu calon!';
+        resultText.style.color = 'red';
+      } else {
+        const nama = pilihan.value;
+        resultText.textContent = `Terima kasih, suara Anda untuk ${nama} telah dicatat!`;
+        resultText.style.color = 'green';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>

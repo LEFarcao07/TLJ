@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pendaftaran OSIS</title>
+  <style>
+    /* Animasi latar bintang */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 5s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 80px auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background animation -->
+  <div class="background" id="background"></div>
+
+  <div class="form-box">
+    <h2>Form Pendaftaran Calon Anggota OSIS</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeuXd9upXVeu4e5KTkUTh1Meq8SeNjxmmuQFrH5XVQV3qP37w/formResponse" method="POST" target="_blank">
+      <label>Nama Lengkap</label>
+      <input name="entry.404977100" type="text" required>
+      <label>Kelas</label>
+      <select name="entry.1882931725" required>
+        <option value="">Pilih Kelas</option>
+        <option value="X">X</option>
+        <option value="XI">XI</option>
+        <option value="XII">XII</option>
+      </select>
+      <label>Jenis Kelamin</label>
+      <select name="entry.1691926913" required>
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="Laki-Laki">Laki-Laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+      <label>Alasan Ingin Masuk OSIS</label>
+      <textarea name="entry.1818906116" rows="4" required></textarea>
+      <label>Nomor WhatsApp</label>
+      <input name="entry.571568734" type="tel" required>
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+  </div>
+
+  <!-- JavaScript untuk membuat bintang animasi -->
+  <script>
+    const background = document.getElementById('background');
+    const numStars = 100;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      background.appendChild(star);
+    }
+  </script>
+</body>
+</html>
